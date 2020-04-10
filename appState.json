@@ -1,80 +1,114 @@
 {
   "EDITOR_STATE": {
     "allProjectFiles": {
-      "45ea33a9-49bd-4bf3-8595-a52203f1bb5f": {
-        "id": "45ea33a9-49bd-4bf3-8595-a52203f1bb5f",
+      "d42e8b88-0f23-4dcb-b923-85acb295749e": {
+        "id": "d42e8b88-0f23-4dcb-b923-85acb295749e",
         "parent": null,
-        "name": "kt",
-        "type": "DIRECTORY",
-        "isDirectory": true,
-        "children": [
-          "5d2f98e3-dc1a-4b9a-8bdf-63f461308ec4"
-        ],
-        "isRemovable": false,
-        "filePath": "kt"
-      },
-      "5d2f98e3-dc1a-4b9a-8bdf-63f461308ec4": {
-        "id": "5d2f98e3-dc1a-4b9a-8bdf-63f461308ec4",
-        "parent": "45ea33a9-49bd-4bf3-8595-a52203f1bb5f",
-        "name": "lambda.js",
-        "type": "LAMBDA_FILE",
+        "name": "kt.js",
+        "type": "JS_LAMBDA",
         "isDirectory": false,
         "children": [],
         "isRemovable": true,
-        "filePath": "kt/lambda.js",
-        "code": "let Swagger = require('swagger-client');\n\nexports.handler = function (event, context, callback) {\n    // read from event, run your logic; complete via callback(<error, or null on success>, <JSON result on success>)\n    Swagger.http({\n        url: `https://services.pre-prod.apixplatform.com/api-sandbox/application/token`,\n        method: 'post',\n        query: {},\n        headers: { \"Accept\": \"*/*\", \"Content-Type\": \"application/json\" },\n        body: JSON.stringify({ \"password\": \"Jupiter!123\", \"userName\": \"n12kumar@mail.com\" })\n    }).then((response) => {\n        // your code goes here\n        console.log(response);\n    }).catch((err) => {\n        // error handling goes here\n        console.log(err);\n    });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
-        "triggers": [],
-        "config": {
-          "runtime": "nodejs8.10",
-          "timeout": 60,
-          "memory": 128
+        "filePath": "kt.js",
+        "cursor": {
+          "lineNumber": 1,
+          "column": 1
         },
-        "testCases": {
-          "e32be1d0-e99b-47cd-bd1a-b855388802a5": {
-            "id": "e32be1d0-e99b-47cd-bd1a-b855388802a5",
-            "name": "Unnamed event",
-            "functionId": "5d2f98e3-dc1a-4b9a-8bdf-63f461308ec4",
-            "event": "{\n    \"key1\": \"value1\",\n    \"key2\": \"value2\",\n    \"key3\": \"value3\"\n}"
+        "config": {
+          "runtime": "nodejs8",
+          "timeout": 60,
+          "memory": 128,
+          "triggerType": 0,
+          "name": "kt",
+          "handler": "handler"
+        },
+        "triggers": [
+          {
+            "resourceName": "http-trigger",
+            "config": {}
+          }
+        ]
+      },
+      "652fdb22-a994-425a-bcd4-34529b0d1d08": {
+        "id": "652fdb22-a994-425a-bcd4-34529b0d1d08",
+        "parent": null,
+        "name": "index.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "index.js"
+      },
+      "c1383573-3da0-48e9-a859-09ee82861270": {
+        "id": "c1383573-3da0-48e9-a859-09ee82861270",
+        "parent": null,
+        "name": "main.py",
+        "type": "PYTHON_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": false,
+        "filePath": "main.py"
+      },
+      "bacfc907-5c84-403e-b13c-02f032410387": {
+        "id": "bacfc907-5c84-403e-b13c-02f032410387",
+        "parent": null,
+        "name": "Authorizer.js",
+        "type": "JS_FILE",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "Authorizer.js"
+      }
+    },
+    "openFiles": [
+      "d42e8b88-0f23-4dcb-b923-85acb295749e"
+    ],
+    "currentFileId": "d42e8b88-0f23-4dcb-b923-85acb295749e",
+    "resources": {
+      "http-trigger": {
+        "name": "http-trigger",
+        "type": "http-trigger",
+        "config": {}
+      },
+      "pubsubcloudBuilds": {
+        "name": "pubsubcloudBuilds",
+        "type": "CloudPubSub",
+        "config": {
+          "mode": 1,
+          "topic": {
+            "name": "cloud-builds",
+            "subscriptions": []
           }
         }
       }
     },
-    "deletedFiles": [],
-    "rootNode": "45ea33a9-49bd-4bf3-8595-a52203f1bb5f",
-    "openFiles": [
-      "5d2f98e3-dc1a-4b9a-8bdf-63f461308ec4"
-    ],
-    "currentFileId": "5d2f98e3-dc1a-4b9a-8bdf-63f461308ec4",
-    "resources": {},
-    "envVariables": [
-      {
-        "lambdaId": "all",
-        "varKey": "SIGMA_AWS_ACC_ID",
-        "varValue": null,
-        "shouldPersist": false,
-        "displayOnly": false,
-        "editable": false
-      }
-    ],
+    "customTemplate": {
+      "overrideDefault": false,
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [],
     "packageJSON": {
       "dependencies": {
-        "swagger-client": {
-          "name": "swagger-client",
-          "version": "3.8.21",
+        "googleapis": {
+          "name": "googleapis",
+          "language": "nodejs",
+          "version": "29.0.0",
+          "dev": false,
           "notRemovable": false
         }
       }
-    },
-    "lambdaId": "5d2f98e3-dc1a-4b9a-8bdf-63f461308ec4"
+    }
   },
   "PROJECT_META": {
     "projectName": "kt",
     "projectDescription": "",
     "projectVersion": "1.0.0",
-    "projectRegion": "us-east-1",
-    "platform": "AWS",
+    "projectRegion": "asia-northeast1",
+    "platform": "GCP",
+    "language": "nodejs",
     "platformRegions": {},
-    "lastSave": 1545304482980
+    "lastSave": 1586498359107
   },
   "VCS_STATE": {
     "provider": "GitHub",
